@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>朱怡樺 (小樺) | 個人履歷 Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #c49a6c;
+      --bg: #faf8f5;
+      --card-bg: #ffffff;
+      --text-main: #333333;
+      --text-muted: #666666;
+      --border: #ece7df;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* 頁首 / 個人名片 */
+    .header-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 48px 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #c49a6c, #e0c3a2);
+    }
+
+    .avatar-wrapper {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: #f4ece4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: var(--accent);
+      font-weight: 600;
+      border: 2px solid var(--accent);
+    }
+
+    .name-title h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+
+    .name-title .nickname {
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 400;
+      margin-left: 6px;
+    }
+
+    .name-title .job-title {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.95rem;
+      background-color: #f7f2ec;
+      color: #8c6d48;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .contact-bar {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .contact-item:hover {
+      color: var(--accent);
+    }
+
+    /* 區塊卡片 */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 36px 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* 工作經歷時間軸 */
+    .timeline-item {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid #eee7de;
+      margin-bottom: 24px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .timeline-role {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .timeline-duration {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8f6f2;
+      padding: 2px 10px;
+      border-radius: 12px;
+    }
+
+    .timeline-desc {
+      color: var(--text-main);
+      font-size: 0.98rem;
+    }
+
+    .timeline-desc ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+
+    .timeline-desc li {
+      margin-bottom: 6px;
+    }
+
+    /* 專長標籤 */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background: #fbf9f6;
+      border: 1px solid #ebdccf;
+      color: #6e563a;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+    }
+
+    /* 頁尾 */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #999;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 14px;
+      }
+      .header-card, .section-card {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 頂部名片 -->
+    <header class="header-card">
+      <div class="avatar-wrapper">
+        <span>樺</span>
+      </div>
+      <div class="name-title">
+        <h1>朱怡樺 <span class="nickname">（小樺）</span></h1>
+        <div class="job-title">服飾門市人員 / 顧客服務</div>
+      </div>
+      <div class="contact-bar">
+        <a href="mailto:joycejoyce0716@yahoo.com.tw" class="contact-item">
+          ✉️ joycejoyce0716@yahoo.com.tw
+        </a>
+      </div>
+    </header>
+
+    <!-- 工作經歷 -->
+    <section class="section-card">
+      <h2 class="section-title">工作經歷 Experience</h2>
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <span class="timeline-role">服飾門市專員</span>
+          <span class="timeline-duration">1 年多任職經歷</span>
+        </div>
+        <div class="timeline-desc">
+          <ul>
+            <li><strong>顧客服務與銷售諮詢：</strong>了解顧客穿搭需求與喜好，提供親切專業的穿搭建議，提升顧客滿意度與提袋率。</li>
+            <li><strong>賣場陳列與動線維護：</strong>依據季節與新品上市調整展示架陳列（Visual Merchandising），維持店面舒適、整潔的購物氛圍。</li>
+            <li><strong>庫存與商品管理：</strong>協助進貨點交、整燙入庫、盤點與補貨，確保門市商品尺碼充足。</li>
+            <li><strong>團隊協同合作：</strong>與門市夥伴順暢溝通，維持良好交接與收銀結帳作業。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 學歷背景 -->
+    <section class="section-card">
+      <h2 class="section-title">學歷背景 Education</h2>
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <span class="timeline-role">萬能科技大學</span>
+          <span class="timeline-duration">就讀中</span>
+        </div>
+        <div class="timeline-desc">
+          <p>進修部 企業管理系 一年級</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 核心專長 -->
+    <section class="section-card">
+      <h2 class="section-title">專長與能力 Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">門市接待與應對</span>
+        <span class="skill-tag">顧客穿搭建議</span>
+        <span class="skill-tag">商品陳列美感 (VMD)</span>
+        <span class="skill-tag">庫存管理與整燙</span>
+        <span class="skill-tag">銷售技巧與溝通</span>
+        <span class="skill-tag">基礎商業管理概念</span>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 朱怡樺 (小樺) · 個人履歷網頁
+    </footer>
+
+  </div>
+
+</body>
+</html>
