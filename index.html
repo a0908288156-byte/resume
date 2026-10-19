@@ -3,88 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>朱怡樺 (小樺) | 個人履歷 Portfolio & Resume</title>
-  <!-- Google Fonts: 雅緻宋體與現代無襯線體 -->
+  <title>朱怡樺 Joyce Chu | 時尚零售與門市顧問 · 個人履歷</title>
+  
+  <!-- 精選設計字型 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Serif+TC:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,600&family=Noto+Serif+TC:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-cream: #fbf9f5;
+      --bg-base: #faf7f2;
       --card-bg: rgba(255, 255, 255, 0.88);
-      --primary: #232220;
-      --text-sub: #635f59;
-      --accent-gold: #c29668;
-      --accent-soft: #f4ece3;
-      --accent-warm: #d97d64;
-      --border-light: rgba(226, 219, 210, 0.8);
-      --glass-blur: blur(14px);
-      --shadow-sm: 0 4px 20px rgba(50, 40, 30, 0.04);
-      --shadow-hover: 0 12px 32px rgba(50, 40, 30, 0.08);
-      --radius-lg: 24px;
-      --radius-sm: 12px;
+      --card-border: rgba(230, 222, 212, 0.85);
+      --primary: #1e1d1b;
+      --text-muted: #6e6962;
+      --gold-accent: #b88655;
+      --gold-light: #f5ece2;
+      --gold-gradient: linear-gradient(135deg, #c59b6d 0%, #a27443 100%);
+      --coral-accent: #e07a5f;
+      --nav-height: 72px;
+      --radius-xl: 28px;
+      --radius-md: 16px;
+      --shadow-soft: 0 10px 30px rgba(50, 40, 30, 0.05);
+      --shadow-hover: 0 16px 36px rgba(184, 134, 85, 0.12);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
 
     body {
-      background-color: var(--bg-cream);
+      background-color: var(--bg-base);
       color: var(--primary);
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
       line-height: 1.8;
+      padding-top: calc(var(--nav-height) + 20px);
+      padding-bottom: 90px;
       position: relative;
-      min-height: 100vh;
       overflow-x: hidden;
-      padding: 40px 20px 80px;
     }
 
-    /* 柔美背景氛圍光暈 */
-    .ambient-glow {
+    /* 背景柔光藝術氛圍 (Atmospheric Aura) */
+    .glow-orb {
       position: fixed;
       border-radius: 50%;
-      filter: blur(100px);
+      filter: blur(120px);
       z-index: -1;
-      opacity: 0.55;
       pointer-events: none;
+      opacity: 0.6;
     }
     .glow-1 {
-      width: 450px;
-      height: 450px;
-      background: #f5e4d3;
+      width: 500px;
+      height: 500px;
+      background: #f7e6d5;
       top: -100px;
       left: -120px;
     }
     .glow-2 {
-      width: 500px;
-      height: 500px;
-      background: #faeedb;
-      bottom: 5%;
-      right: -100px;
+      width: 480px;
+      height: 480px;
+      background: #fdecde;
+      bottom: 10%;
+      right: -80px;
     }
 
-    .container {
-      max-width: 860px;
+    /* 頂部極簡奢華導覽列 (Sticky Luxury Navbar) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: rgba(250, 247, 242, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(228, 220, 209, 0.7);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 920px;
+      width: 100%;
       margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    /* 頂部形象卡片 (Hero Card) */
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .nav-avatar-mini {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 600;
+      font-size: 15px;
+      box-shadow: 0 2px 8px rgba(184, 134, 85, 0.3);
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    .nav-title-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: var(--gold-accent);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 30px;
+      transition: all 0.25s ease;
+    }
+
+    .nav-item a:hover {
+      color: var(--primary);
+      background: rgba(184, 134, 85, 0.12);
+    }
+
+    .nav-item a.active {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .nav-btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #ffffff !important;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(30, 29, 27, 0.15);
+    }
+
+    .nav-btn-contact:hover {
+      background: #3a3733;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(30, 29, 27, 0.22);
+    }
+
+    /* 主內容佈局容器 */
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 錨點滾動位移補償 */
+    .scroll-target {
+      scroll-margin-top: calc(var(--nav-height) + 28px);
+    }
+
+    /* 頂部首頁卡片 (Hero Profile Card) */
     .hero-card {
       background: var(--card-bg);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
-      padding: 56px 44px 44px;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 32px;
-      position: relative;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-xl);
+      padding: 60px 48px 48px;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      margin-bottom: 36px;
       overflow: hidden;
     }
 
@@ -95,341 +222,340 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, #d97d64, #c29668, #e5cfb8);
+      background: linear-gradient(90deg, #e07a5f, #c59b6d, #ebd5be);
     }
 
-    .avatar-container {
+    .avatar-wrapper {
       position: relative;
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       margin: 0 auto 24px;
     }
 
-    .avatar {
+    .avatar-circle {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: linear-gradient(135deg, #f6ede3 0%, #ecd9c6 100%);
+      background: linear-gradient(135deg, #f5ece2 0%, #ebd7c3 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Noto Serif TC', serif;
-      font-size: 40px;
-      font-weight: 600;
-      color: #7b5936;
-      border: 3px solid #ffffff;
-      box-shadow: 0 8px 24px rgba(194, 150, 104, 0.25);
+      font-size: 46px;
+      font-weight: 700;
+      color: #7d5936;
+      border: 4px solid #ffffff;
+      box-shadow: 0 10px 28px rgba(184, 134, 85, 0.25);
     }
 
-    .badge-status {
+    .status-badge {
       position: absolute;
-      bottom: 0px;
-      right: -2px;
+      bottom: 2px;
+      right: 0px;
       background: #ffffff;
-      border: 1px solid var(--border-light);
-      padding: 3px 10px;
+      border: 1px solid var(--card-border);
+      padding: 3px 12px;
       border-radius: 20px;
       font-size: 0.75rem;
-      font-weight: 500;
-      color: #635f59;
+      font-weight: 600;
+      color: #55504a;
       display: flex;
       align-items: center;
-      gap: 5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      gap: 6px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
     }
 
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      background: #48bb78;
+    .status-pulse {
+      width: 8px;
+      height: 8px;
+      background: #38a169;
       border-radius: 50%;
       display: inline-block;
+      box-shadow: 0 0 0 2px rgba(56, 161, 105, 0.2);
     }
 
-    .hero-title {
+    .hero-name {
       font-family: 'Noto Serif TC', serif;
-      font-size: 2.3rem;
+      font-size: 2.4rem;
       font-weight: 700;
       letter-spacing: 2px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .hero-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-style: italic;
+      color: var(--gold-accent);
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 6px 22px;
+      background: var(--gold-light);
+      border-radius: 30px;
+      color: #7b5936;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-summary {
+      max-width: 650px;
+      margin: 24px auto 0;
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      line-height: 1.85;
+    }
+
+    .hero-cta-group {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-luxury {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary-dark {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(30, 29, 27, 0.2);
+    }
+
+    .btn-primary-dark:hover {
+      background: #33302c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(30, 29, 27, 0.28);
+    }
+
+    /* 區塊標準卡片 (Sections) */
+    .section-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-xl);
+      padding: 44px 48px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .section-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 18px;
+      margin-bottom: 28px;
+    }
+
+    .section-header h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .section-header .en-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-accent);
+      font-weight: 600;
+    }
+
+    /* 工作經歷時間軸 */
+    .timeline-wrap {
+      position: relative;
+      padding-left: 36px;
+    }
+
+    .timeline-wrap::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 12px;
+      bottom: 0px;
+      width: 2px;
+      background: #eedfd2;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--bg-base);
+      border: 3.5px solid var(--gold-accent);
+    }
+
+    .exp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .exp-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .exp-badge {
+      background: var(--gold-light);
+      color: #7b5936;
+      font-size: 0.88rem;
+      padding: 3px 14px;
+      border-radius: 14px;
+      font-weight: 600;
+    }
+
+    /* 3 個實務專業卡片 (Cards in Grid) */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .feature-box {
+      background: #ffffff;
+      border: 1px solid #eee7de;
+      border-radius: var(--radius-md);
+      padding: 22px 20px;
+      transition: all 0.25s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .feature-box:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-accent);
+      box-shadow: 0 8px 20px rgba(184, 134, 85, 0.12);
+    }
+
+    .feature-icon {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-title {
+      font-size: 1.02rem;
+      font-weight: 700;
       color: var(--primary);
       margin-bottom: 6px;
     }
 
-    .hero-nickname {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-style: italic;
-      color: var(--accent-gold);
-      font-weight: 500;
-      letter-spacing: 0.5px;
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
-    .hero-tagline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 10px;
-      padding: 6px 20px;
-      background: var(--accent-soft);
-      border-radius: 30px;
-      color: #7d5936;
-      font-size: 0.95rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-
-    .hero-bio {
-      max-width: 620px;
-      margin: 22px auto 0;
-      color: var(--text-sub);
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    /* 聯絡按鈕群 */
-    .contact-actions {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-
-    .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 22px;
-      border-radius: 30px;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      font-weight: 500;
-    }
-
-    .contact-btn-primary {
-      background: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(35, 34, 32, 0.18);
-    }
-
-    .contact-btn-primary:hover {
-      background: #3b3935;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(35, 34, 32, 0.25);
-    }
-
-    .contact-btn-outline {
-      background: rgba(255, 255, 255, 0.8);
-      border: 1px solid var(--border-light);
-      color: var(--primary);
-    }
-
-    .contact-btn-outline:hover {
-      background: #ffffff;
-      border-color: var(--accent-gold);
-      color: var(--accent-gold);
-      transform: translateY(-2px);
-    }
-
-    /* 通用卡片外觀 */
-    .content-card {
-      background: var(--card-bg);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-lg);
-      padding: 38px 40px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .content-card:hover {
-      box-shadow: var(--shadow-hover);
-    }
-
-    .card-heading {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      border-bottom: 1px solid var(--border-light);
-      padding-bottom: 16px;
-      margin-bottom: 26px;
-    }
-
-    .card-heading h2 {
-      font-family: 'Noto Serif TC', serif;
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--primary);
-      letter-spacing: 1px;
-    }
-
-    .card-heading .en-subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--accent-gold);
-      font-weight: 600;
-    }
-
-    /* 經歷時間軸美化 */
-    .experience-item {
-      position: relative;
-      padding-left: 32px;
-    }
-
-    .experience-item::before {
-      content: "";
-      position: absolute;
-      left: 7px;
-      top: 10px;
-      bottom: -10px;
-      width: 2px;
-      background: #ecdccf;
-    }
-
-    .experience-bullet {
-      position: absolute;
-      left: 0;
-      top: 6px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: var(--bg-cream);
-      border: 3px solid var(--accent-gold);
-    }
-
-    .exp-header {
+    /* 學歷卡片 */
+    .education-box {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .exp-title {
-      font-size: 1.18rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .exp-period {
-      font-size: 0.88rem;
-      background: #f3ece4;
-      color: #7b5936;
-      padding: 3px 12px;
-      border-radius: 12px;
-      font-weight: 500;
-    }
-
-    /* 關鍵工作指標 (Metric Cards) */
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
-      margin: 18px 0;
-    }
-
-    .metric-box {
+      align-items: center;
       background: #ffffff;
       border: 1px solid #eee7de;
-      border-radius: var(--radius-sm);
-      padding: 18px 20px;
-      transition: transform 0.2s;
+      padding: 24px 28px;
+      border-radius: var(--radius-md);
     }
 
-    .metric-box:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent-gold);
+    .edu-school-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
     }
 
-    .metric-icon {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-    }
-
-    .metric-title {
+    .edu-dept-name {
+      color: var(--text-muted);
       font-size: 0.98rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 4px;
     }
 
-    .metric-desc {
+    .edu-status-pill {
       font-size: 0.88rem;
-      color: var(--text-sub);
-      line-height: 1.5;
-    }
-
-    /* 學歷區塊 */
-    .edu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #ffffff;
-      border: 1px solid #f0e9df;
-      padding: 20px 24px;
-      border-radius: var(--radius-sm);
-    }
-
-    .edu-school {
-      font-size: 1.12rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 4px;
-    }
-
-    .edu-dept {
-      color: var(--text-sub);
-      font-size: 0.95rem;
-    }
-
-    .edu-tag {
-      font-size: 0.85rem;
       background: #fbf5ee;
-      color: #94693e;
-      border: 1px solid #ebd8c2;
-      padding: 4px 14px;
+      color: #8c6035;
+      border: 1px solid #ebd9c6;
+      padding: 5px 18px;
       border-radius: 20px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     /* 技能標籤格 (Skill Chips) */
-    .skills-container {
+    .skills-flex {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
 
-    .skill-chip {
+    .skill-tag {
       background: #ffffff;
-      border: 1px solid #e7ded2;
-      padding: 10px 20px;
+      border: 1px solid #e5dbcd;
+      padding: 10px 22px;
       border-radius: 30px;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       color: #494540;
       font-weight: 500;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
       transition: all 0.2s ease;
     }
 
-    .skill-chip:hover {
-      border-color: var(--accent-gold);
+    .skill-tag:hover {
+      border-color: var(--gold-accent);
       color: #7b5936;
-      background: #fdfbf7;
+      background: #fcf9f5;
       transform: translateY(-2px);
     }
 
-    .skill-chip span.icon {
-      color: var(--accent-gold);
+    .skill-sparkle {
+      color: var(--gold-accent);
+      font-weight: bold;
+    }
+
+    /* 聯絡我們區塊 */
+    .contact-center {
+      text-align: center;
+      padding: 16px 0;
+    }
+
+    .contact-center p {
+      color: var(--text-muted);
       font-size: 1.05rem;
+      margin-bottom: 24px;
     }
 
     /* 頁尾 */
@@ -438,7 +564,6 @@
       margin-top: 50px;
       color: #9e9a93;
       font-size: 0.88rem;
-      letter-spacing: 0.5px;
     }
 
     footer p.sub {
@@ -446,21 +571,31 @@
       font-size: 0.8rem;
     }
 
-    /* 手機版排版調整 */
-    @media (max-width: 640px) {
+    /* 響應式手機調整 */
+    @media (max-width: 680px) {
+      :root {
+        --nav-height: 60px;
+      }
       body {
-        padding: 20px 14px 60px;
+        padding-top: calc(var(--nav-height) + 12px);
       }
-      .hero-card {
-        padding: 40px 22px 32px;
+      .nav-title-sub, .nav-btn-contact {
+        display: none;
       }
-      .hero-title {
-        font-size: 1.85rem;
+      .nav-links {
+        gap: 2px;
       }
-      .content-card {
-        padding: 28px 20px;
+      .nav-item a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
       }
-      .edu-item {
+      .hero-card, .section-card {
+        padding: 36px 20px;
+      }
+      .hero-name {
+        font-size: 1.95rem;
+      }
+      .education-box {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
@@ -470,34 +605,59 @@
 </head>
 <body>
 
-  <!-- 背景柔光氛圍 -->
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
+  <!-- 頂部精緻固定導覽列 (Sticky Navbar) -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#about" class="nav-brand">
+        <div class="nav-avatar-mini">樺</div>
+        <div class="nav-brand-text">
+          <span class="nav-name">朱怡樺</span>
+          <span class="nav-title-sub">Joyce Chu</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-item"><a href="#about" class="nav-link active">關於</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link">經歷</a></li>
+        <li class="nav-item"><a href="#education" class="nav-link">學歷</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link">專長</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">聯絡</a></li>
+      </ul>
+
+      <a href="mailto:joycejoyce0716@yahoo.com.tw" class="nav-btn-contact">
+        ✉️ 寄信聯絡
+      </a>
+    </div>
+  </nav>
+
+  <!-- 背景柔和暖色氛圍球 -->
+  <div class="glow-orb glow-1"></div>
+  <div class="glow-orb glow-2"></div>
 
   <div class="container">
     
-    <!-- 頂部形象名片區 -->
-    <header class="hero-card">
-      <div class="avatar-container">
-        <div class="avatar">樺</div>
-        <div class="badge-status">
-          <span class="status-dot"></span> 求職 / 探索中
+    <!-- 1. 關於我 / 核心形象 (About) -->
+    <header id="about" class="hero-card scroll-target">
+      <div class="avatar-wrapper">
+        <div class="avatar-circle">樺</div>
+        <div class="status-badge">
+          <span class="status-pulse"></span> 求職中 · 期待新機會
         </div>
       </div>
 
-      <h1 class="hero-title">朱怡樺 <span class="hero-nickname">Joyce Chu</span></h1>
+      <h1 class="hero-name">朱怡樺 <span class="hero-en">Joyce Chu</span></h1>
       
-      <div class="hero-tagline">
+      <div class="hero-tag">
         ✨ 門市時尚顧問 · 顧客穿搭美學 · 企管在讀
       </div>
 
-      <p class="hero-bio">
-        擁有 1 年以上服飾專門店第一線服務與銷售實務經驗，熟悉顧客互動、穿搭美感與門市陳列管理。
-        目前就讀萬能科技大學企業管理系，結合理論思維與實務熱忱，持續在零售與商業領域深耕成長。
+      <p class="hero-summary">
+        具備 1 年以上服飾專門店第一線服務與銷售經驗，專注於顧客穿搭需求、視覺陳列與細緻服務。<br>
+        目前於萬能科技大學進修企業管理，期望將實務服務熱忱與商業管理知識結合，在零售與時尚領域創造更多價值。
       </p>
 
-      <div class="contact-actions">
-        <a href="mailto:joycejoyce0716@yahoo.com.tw" class="contact-btn contact-btn-primary">
+      <div class="hero-cta-group">
+        <a href="mailto:joycejoyce0716@yahoo.com.tw" class="btn-luxury btn-primary-dark">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect width="20" height="16" x="2" y="4" rx="2"></rect>
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L1 7"></path>
@@ -507,84 +667,120 @@
       </div>
     </header>
 
-    <!-- 工作實務經歷 -->
-    <section class="content-card">
-      <div class="card-heading">
+    <!-- 2. 工作實務經歷 (Experience) -->
+    <section id="experience" class="section-card scroll-target">
+      <div class="section-header">
         <h2>工作經歷</h2>
-        <span class="en-subtitle">Experience</span>
+        <span class="en-label">Experience</span>
       </div>
 
-      <div class="experience-item">
-        <div class="experience-bullet"></div>
-        <div class="exp-header">
+      <div class="timeline-wrap">
+        <div class="timeline-dot"></div>
+        <div class="exp-top">
           <h3 class="exp-title">服飾門市專員 / 銷售顧問</h3>
-          <span class="exp-period">任職 1 年多</span>
+          <span class="exp-badge">任職 1 年多</span>
         </div>
 
-        <!-- 3 個視覺化亮點卡片 -->
-        <div class="metric-grid">
-          <div class="metric-box">
-            <div class="metric-icon">👗</div>
-            <div class="metric-title">穿搭諮詢與顧客經營</div>
-            <div class="metric-desc">傾聽顧客身型與穿著場合偏好，給予貼切的搭配方案，提升信任感與成交率。</div>
+        <div class="feature-grid">
+          <div class="feature-box">
+            <div class="feature-icon">👗</div>
+            <div class="feature-title">穿搭諮詢與顧客經營</div>
+            <div class="feature-desc">傾聽顧客身型與穿著場合偏好，給予貼切的搭配方案，提升信任感與成交率。</div>
           </div>
 
-          <div class="metric-box">
-            <div class="metric-icon">✨</div>
-            <div class="metric-title">視覺陳列與動線 (VMD)</div>
-            <div class="metric-desc">依照季節趨勢與主打款式規劃模特兒穿搭與陳列架，營造舒適且具質感的購物環境。</div>
+          <div class="feature-box">
+            <div class="feature-icon">✨</div>
+            <div class="feature-title">視覺陳列與動線 (VMD)</div>
+            <div class="feature-desc">依照季節趨勢與主打款式規劃模特兒穿搭與陳列架，營造舒適且具質感的購物氛圍。</div>
           </div>
 
-          <div class="metric-box">
-            <div class="metric-icon">📦</div>
-            <div class="metric-title">庫存點交與整燙維護</div>
-            <div class="metric-desc">嚴格執行商品整燙、瑕疵品檢查與系統庫存盤點，確保門市運作順暢與尺碼齊全。</div>
+          <div class="feature-box">
+            <div class="feature-icon">📦</div>
+            <div class="feature-title">庫存點交與整燙維護</div>
+            <div class="feature-desc">嚴格執行商品整燙、瑕疵品檢查與系統庫存盤點，確保門市運作順暢與尺碼齊全。</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 學歷與進修 -->
-    <section class="content-card">
-      <div class="card-heading">
+    <!-- 3. 學歷背景 (Education) -->
+    <section id="education" class="section-card scroll-target">
+      <div class="section-header">
         <h2>學歷背景</h2>
-        <span class="en-subtitle">Education</span>
+        <span class="en-label">Education</span>
       </div>
 
-      <div class="edu-item">
+      <div class="education-box">
         <div>
-          <div class="edu-school">萬能科技大學</div>
-          <div class="edu-dept">進修部 · 企業管理系 (一年級在學)</div>
+          <div class="edu-school-name">萬能科技大學</div>
+          <div class="edu-dept-name">進修部 · 企業管理系 (一年級在學)</div>
         </div>
-        <div class="edu-tag">2026 - 在學中</div>
+        <div class="edu-status-pill">2026 - 在學中</div>
       </div>
     </section>
 
-    <!-- 專長與核心優勢 -->
-    <section class="content-card">
-      <div class="card-heading">
+    <!-- 4. 專長與核心優勢 (Skills) -->
+    <section id="skills" class="section-card scroll-target">
+      <div class="section-header">
         <h2>專業能力</h2>
-        <span class="en-subtitle">Core Strengths</span>
+        <span class="en-label">Core Strengths</span>
       </div>
 
-      <div class="skills-container">
-        <div class="skill-chip"><span class="icon">✦</span> 顧客心理與溝通傾聽</div>
-        <div class="skill-chip"><span class="icon">✦</span> 服飾風格與色彩搭配</div>
-        <div class="skill-chip"><span class="icon">✦</span> 門市陳列美學 (VMD)</div>
-        <div class="skill-chip"><span class="icon">✦</span> 銷售應對與成交技巧</div>
-        <div class="skill-chip"><span class="icon">✦</span> 庫存盤點與整燙作業</div>
-        <div class="skill-chip"><span class="icon">✦</span> POS 結帳與收銀流程</div>
-        <div class="skill-chip"><span class="icon">✦</span> 企管基礎營運概念</div>
+      <div class="skills-flex">
+        <div class="skill-tag"><span class="skill-sparkle">✦</span> 顧客心理與溝通傾聽</div>
+        <div class="skill-tag"><span class="skill-sparkle">✦</span> 服飾風格與色彩搭配</div>
+        <div class="skill-tag"><span class="skill-sparkle">✦</span> 門市陳列美學 (VMD)</div>
+        <div class="skill-tag"><span class="skill-sparkle">✦</span> 銷售應對與成交技巧</div>
+        <div class="skill-tag"><span class="skill-sparkle">✦</span> 庫存盤點與整燙作業</div>
+        <div class="skill-tag"><span class="skill-sparkle">✦</span> POS 結帳與收銀流程</div>
+        <div class="skill-tag"><span class="skill-sparkle">✦</span> 企管基礎營運概念</div>
+      </div>
+    </section>
+
+    <!-- 5. 聯絡資訊 (Contact) -->
+    <section id="contact" class="section-card scroll-target">
+      <div class="section-header">
+        <h2>聯絡資訊</h2>
+        <span class="en-label">Get in Touch</span>
+      </div>
+      <div class="contact-center">
+        <p>若您對我的門市實務經歷或個人特質感興趣，歡迎隨時來信！</p>
+        <a href="mailto:joycejoyce0716@yahoo.com.tw" class="btn-luxury btn-primary-dark">
+          ✉️ 寄信給小樺 (joycejoyce0716@yahoo.com.tw)
+        </a>
       </div>
     </section>
 
     <!-- 頁尾 -->
     <footer>
       <p>© 2026 朱怡樺 (Joyce Chu) · 個人線上履歷</p>
-      <p class="sub">Designed with Care & Elegance</p>
+      <p class="sub">Designed with Elegance & Care</p>
     </footer>
 
   </div>
+
+  <!-- 滾動自動選中導覽列 Script -->
+  <script>
+    const targets = document.querySelectorAll('.scroll-target');
+    const links = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+      targets.forEach(section => {
+        const top = section.offsetTop - 140;
+        if (window.pageYOffset >= top) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
